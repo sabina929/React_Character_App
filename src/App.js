@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./layout/Header";
+import Characters from "./components/Characters";
+import AddCharacter from "./forms/AddCharacter";
+import UpdateCharacter from "./forms/UpdateCharacter";
+import NotFound from "./pages/NotFound";
+import Contribute from "./pages/Contribute";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+
+// https://anapioficeandfire.com/api/characters/583
+class App extends Component {
+
+
+  render() {
+
+    return (
+
+      <Router>
+        <div className="container">
+     
+        <Header title="A Song of Ice and Fire's characters"/>
+
+   
+
+      <Switch>
+          <Route exact path="/" component={Characters}/>
+          <Route exact path="/add" component={AddCharacter}/>
+          <Route exact path="/github" component={Contribute}/>
+          <Route exact path="/edit/:id" component={UpdateCharacter}/>
+          <Route component={NotFound}/> 
+      </Switch>
+
+
+        </div>
+      </Router>
+
+      );
+  }
+
 }
 
 export default App;
