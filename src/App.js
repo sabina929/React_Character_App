@@ -10,6 +10,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 
+// const Home = () => {
+//   return (
+//     <h3>Home Page</h3>
+//   )
+// }
+// const About = () => {
+//   return (
+//     <h3>About Page</h3>
+//   )
+// }
+
 
 // https://anapioficeandfire.com/api/characters/583
 class App extends Component {
@@ -21,10 +32,28 @@ class App extends Component {
 
       <Router>
         <div className="container">
+          { /* <Route exact path="/" render={
+      () => {
+        return <h3>Home Page</h3>
+      }
+      } />
+          <Route exact path="/about" render={
+      () => {
+        return <h3>About Page</h3>
+      }
+      } /> */ }
+
+          { /* <Route exact path="/" component={Home}/> */ }
+          { /* <Route exact path="/about" component={About}/> */ }
+
+
      
         <Header title="A Song of Ice and Fire's characters"/>
 
    
+
+      { /* <AddCharacter/> */ }
+      { /* <Characters /> */ }
 
       <Switch>
           <Route exact path="/" component={Characters}/>

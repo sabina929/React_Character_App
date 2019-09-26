@@ -3,6 +3,7 @@ import './AddCharacter.css';
 import CharacterConsumer from "../context";
 import axios from "axios";
 
+// var uniqid = require('uniqid');
 
 
 
@@ -69,7 +70,7 @@ class UpdateCharacter extends Component {
     }
 
 
-    const response = await axios.put(`http://localhost:3004/characters/${id}`, updatedCharacter);
+    const response = await axios.put(`https://my-json-server.typicode.com/sabina929/character-json-server/characters/${id}`, updatedCharacter);
 
     dispatch({
       type: "UPDATE_USER",
@@ -84,7 +85,7 @@ class UpdateCharacter extends Component {
   componentDidMount = async () => {
     const {id} = this.props.match.params;
 
-    const response = await axios.get(`http://localhost:3004/characters/${id}`);
+    const response = await axios.get(`https://my-json-server.typicode.com/sabina929/character-json-server/characters/${id}`);
     const {imgSrc, name, alias, title, allegiance, culture, born, spouse, issue, books} = response.data;
     this.setState({
       imgSrc,

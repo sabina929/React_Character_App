@@ -44,7 +44,7 @@ export class CharacterProvider extends Component {
   }
 
   componentDidMount = async () => {
-    const response = await axios.get("http://localhost:3004/characters");
+    const response = await axios.get("https://my-json-server.typicode.com/sabina929/character-json-server/characters");
     // console.log(response);
     this.setState({
       characters: response.data

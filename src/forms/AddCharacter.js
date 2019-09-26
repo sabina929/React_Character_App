@@ -3,6 +3,8 @@ import './AddCharacter.css';
 import posed from "react-pose";
 import CharacterConsumer from "../context";
 import axios from "axios";
+// https://my-json-server.typicode.com/sabina929/character-json-server/characters
+
 
 // var uniqid = require('uniqid');
 
@@ -49,6 +51,56 @@ class AddCharacter extends Component {
     })
   }
 
+  //   changeName = (e) => {
+  //     this.setState({
+  //       name: e.target.value
+  //     })
+  //   }
+  //   changeImgSrc = (e) => {
+  //     this.setState({
+  //       imgSrc: e.target.value
+  //     })
+  //   }
+  //   changeAlias = (e) => {
+  //     this.setState({
+  //       alias: e.target.value
+  //     })
+  //   }
+  //   changeTitle = (e) => {
+  //     this.setState({
+  //       title: e.target.value
+  //     })
+  //   }
+  //   changeAllegiance = (e) => {
+  //     this.setState({
+  //       allegiance: e.target.value
+  //     })
+  //   }
+  //   changeCulture = (e) => {
+  //     this.setState({
+  //       culture: e.target.value
+  //     })
+  //   }
+  //   changeBorn = (e) => {
+  //     this.setState({
+  //       born: e.target.value
+  //     })
+  //   }
+  //   changeSpouse = (e) => {
+  //     this.setState({
+  //       spouse: e.target.value
+  //     })
+  //   }
+  //   changeIssue = (e) => {
+  //     this.setState({
+  //       issue: e.target.value
+  //     })
+  //   }
+  //   changeBooks = (e) => {
+  //     this.setState({
+  //       books: e.target.value
+  //     })
+  //   }
 
 
 
@@ -93,7 +145,7 @@ class AddCharacter extends Component {
       return;
     }
     //POST Request
-    const response = await axios.post("http://localhost:3004/characters", newCharacter);
+    const response = await axios.post("https://my-json-server.typicode.com/sabina929/character-json-server/characters", newCharacter);
 
     dispatch({
       type: "ADD_CHARACTER",
@@ -131,7 +183,7 @@ class AddCharacter extends Component {
                     <h4>Add Character Form</h4>
                 </div>
                 <div className="card-body">
-
+                  
                   {
           error ? <div className="alert alert-danger">Please, enter all informations.</div> : null
           }
